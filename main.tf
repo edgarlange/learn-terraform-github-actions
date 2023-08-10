@@ -2,6 +2,13 @@
 # SPDX-License-Identifier: MPL-2.0
 
 terraform {
+  cloud {
+    organization = "terraform-lange"
+
+    workspaces {
+      name = "learn-terraform-github-actions"
+    }
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -16,7 +23,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-west-2"
+  region = "us-east-1"
 }
 
 resource "random_pet" "sg" {}
